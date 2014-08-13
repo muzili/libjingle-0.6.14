@@ -344,6 +344,7 @@ talk.Library(env, name = "videorenderer",
              ],
              lin_packages = [
                "gtk+-2.0",
+               "gthread-2.0",
              ],
 )
 talk.Library(env, name = "unittest_main",
@@ -441,6 +442,20 @@ talk.App(env, name = "stunserver",
          srcs = [
            "p2p/base/stunserver_main.cc",
          ],
+)
+talk.App(env, name = "pcp",
+        libs = [
+            "jingle",
+            "expat",
+            "xmpphelp",
+        ],
+        posix_libs = [
+            "crypto",
+            "ssl",
+        ],
+        srcs = [
+            "examples/pcp/pcp_main.cc",
+        ],
 )
 talk.Unittest(env, name = "base",
               lin_srcs = [

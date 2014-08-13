@@ -29,6 +29,8 @@
 #include "config.h"
 #endif  // HAVE_CONFIG_H
 
+#include <unistd.h>
+
 #if HAVE_OPENSSL_SSL_H
 
 #include <openssl/bio.h>

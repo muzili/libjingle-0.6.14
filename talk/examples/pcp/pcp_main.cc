@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <unistd.h>
 
 #if HAVE_CONFIG_H
 #include "config.h"
@@ -307,7 +308,7 @@ buzz::XmppClientSettings LoginSettings() {
   buzz::XmppClientSettings xcs;
   xcs.set_user(gUserJid.node());
   xcs.set_host(gUserJid.domain());
-  xcs.set_resource("pcp");
+  xcs.set_resource(gUserJid.resource());
   xcs.set_pass(talk_base::CryptString(gUserPass));
   talk_base::SocketAddress server(gXmppHost, gXmppPort);
   xcs.set_server(server);
